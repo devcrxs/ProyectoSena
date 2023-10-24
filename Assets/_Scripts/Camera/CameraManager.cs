@@ -102,12 +102,12 @@ public class CameraManager : MonoBehaviour
 
     IEnumerator LerpZoomCamera(float zoom,float speedLerp)
     {
-        float startSize = _currentCamera.m_Lens.OrthographicSize;
+        _sizeCamera = _currentCamera.m_Lens.OrthographicSize;
         float time = 0;
         while (time < 0.4f)
         {
             time += Time.deltaTime;
-            float newSize = Mathf.Lerp(startSize, zoom, (time/ speedLerp));
+            float newSize = Mathf.Lerp(_sizeCamera, zoom, (time/ speedLerp));
             _currentCamera.m_Lens.OrthographicSize = newSize;
             yield return null;
         }

@@ -88,7 +88,7 @@ public class DialogueManager : MonoBehaviour
                     isTag = true;
                     isFinish = false;
                 }
-
+    
                 if (letter == '>')
                 {
                     isTag = false;
@@ -105,6 +105,7 @@ public class DialogueManager : MonoBehaviour
                     if (tag.Length > 0 && isFinish == false)
                     {
                         textDialogueTMP.text += tag;
+                        tag = "";
                         isFinish = true;
                     }
                     else

@@ -2,9 +2,10 @@ using UnityEngine;
 public class PlayerAnimations : MonoBehaviour
 {
     public static PlayerAnimations instance;
+    private Animator currentAnimator;
     [SerializeField] private Animator animatorHuman;
     [SerializeField] private Animator animatorCat;
-
+    public Animator CurrentAnimator => currentAnimator;
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -19,6 +20,7 @@ public class PlayerAnimations : MonoBehaviour
     private void SetAnimations(Animator animator)
     {
         if (!animator.gameObject.activeInHierarchy) return;
+        currentAnimator = animator;
         float speed = PlayerProperties.instance.IsDynamicBody() && !GameManager.instance.DesactiveInputs? Input.GetAxisRaw("Horizontal") : 0;
         animator.SetFloat("Speed", speed);
         if(!PlayerProperties.instance.IsDynamicBody()) return;
@@ -30,17 +32,24 @@ public class PlayerAnimations : MonoBehaviour
 
     public void CallConvertAnimation()
     {
-        Animator animator = animatorHuman.gameObject.activeInHierarchy ? animatorHuman : animatorCat;
-        animator.SetTrigger("Convert");
+        currentAnimator = animatorHuman.gameObject.activeInHierarchy ? animatorHuman : animatorCat;
+        currentAnimator.SetTrigger("Convert");
     }
 
     public void ResetAnimations()
     {
-        Animator animator = animatorHuman.gameObject.activeInHierarchy ? animatorHuman : animatorCat;
-        animator.SetFloat("Speed", 0);
-        animator.SetBool("IsJump",false);
-        animator.SetBool("IsFalling",false);
-        animator.SetBool("IsDash",false);
-        animator.SetBool("IsMoving",false);       
+        currentAnimator = animatorHuman.gameObject.activeInHierarchy ? animatorHuman : animatorCat;
+        currentAnimator.SetFloat("Speed", 0);
+        currentAnimator.SetBool("IsJump",false);
+        currentAnimator.SetBool("IsFalling",false);
+        currentAnimator.SetBool("IsDash",false);
+        currentAnimator.SetBool("IsMoving",false);       
+    }
+
+    public void AnimationDead()
+    {
+        currentAnimator = animatorHuman.gameObject.activeInHierarchy ? animatorHuman : animatorCat;
+        currentAnimator.SetTrigger("IsDead");
+        GameManager.instance.ResetPlayerDead();
     }
 }

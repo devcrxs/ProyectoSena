@@ -13,14 +13,20 @@ MonoBehaviour:
   m_Name: DialogueCat
   m_EditorClassIdentifier: 
   dialogue:
-  - Hola Jugador.
-  - "Veo que deseas salir de la monta\xF1a."
-  - Antes de eso debo advertirte.
-  - Hay <color="red">animales silvestres <color="white">que no te dejaran seguir.
-  - Tambien existen lugares por los cuales...
-  - no podras pasar.
-  - Por lo tanto, tendras que convertirte en tu animal interior.
-  - 'Pulsa <sprite name=KEYBOARD_12> para transformarte '
-  - Adios y suerte
-  iconDialogue: {fileID: 21300000, guid: c0fddf29f1fbcb04281c6acbe027fa39, type: 3}
+  - "\xBFQui\xE9n eres t\xFA peque\xF1o, y qu\xE9 es lo que buscas?"
+  - "Juan, tu deseo es sincero y tu esp\xEDritu <color=\"red\"><b><size=50>valiente</size></b></color>.
+    Te conceder\xE9 un  <color=\"green\"><size=50><b>Don \xFAnico</b></size>"
+  - el poder de convertirte en un <color=#FAC879> <size=60><b>Gato</b></size><sprite
+    name=Cat> </color>
+  - "Con esta habilidad, podr\xE1s superar los <color=\"red\"><b><size=50>obst\xE1culos</size></b></color>
+    que los <color=#9D17BF><b><size=50>esp\xEDritus </size></b></color>de la monta\xF1a
+    pongan en tu camino hacia la ciudad. "
+  - Para usar esta habilidad, simplemente aprieta la tecla <sprite name=KEY_E>
+  - "Cuando te transformes, podr\xE1s pasar por lugares m\xE1s <color=#FBDC4D>peque\xF1os</color>
+    y superar los <color=\"red\"><b><size=50>obst\xE1culos</size></b></color> que
+    los  <color=#9D17BF><b><size=50>esp\xEDritus </size></b></color> de la monta\xF1a
+    pongan en tu camino"
+  - "\xA1<color=\"green\"><b><size=50>Buena suerte</size></b></color> en tu viaje!
+    <sprite name=Heart>"
+  iconDialogue: {fileID: 880441248, guid: f9e45bfa1196e7842bbcf9acffa07fd7, type: 3}
   _audioClipVoice: {fileID: 8300000, guid: c27b26acb5b28e143bc66022ec749da9, type: 3}

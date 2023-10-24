@@ -31,4 +31,9 @@ public class AnimationsEvents : MonoBehaviour
         if(!PlayerProperties.instance.IsTouchGround()) return;
         PlayerEffects.instance.PlayLandEffect();
     }
+
+    public void DeadPlayerTransition()
+    {
+        TransitionManager.instance.TransitionDead();
+    }
 }

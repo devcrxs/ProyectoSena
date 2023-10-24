@@ -10,6 +10,7 @@ public class PlayerDash : MonoBehaviour
    private bool _isDash;
    private bool _canDash;
    private bool _dashAnimation;
+   private float forceDashDefault;
    private Vector2 _directionDash;
    public static PlayerDash instance;
    public bool DashAnimation => _dashAnimation;
@@ -26,6 +27,7 @@ public class PlayerDash : MonoBehaviour
    private void Start()
    {
       _canDash = true;
+      forceDashDefault = forceDash;
    }
 
    private void Update()
@@ -38,10 +40,21 @@ public class PlayerDash : MonoBehaviour
          _directionDash.x = Input.GetAxisRaw("Horizontal");
          _directionDash.y = Input.GetAxisRaw("Vertical");
          ShockWaveManager.instance.CallShockWave();
+         PlayerEffects.instance.StartTrailGhost();
          StartCoroutine(CameraManager.instance.CameraShakeRecursive(2.5f, 0.2f));
          if (_directionDash == Vector2.zero)
          {
-            _directionDash = new Vector2(transform.localScale.x, 0);
+            float directionDash = transform.localRotation.y == 0 ? 1 : -1;
+            _directionDash = new Vector2(directionDash, 0);
+         }
+
+         if (_directionDash.y == 0)
+         {
+            forceDash = 40;
+         }
+         else
+         {
+            forceDash = forceDashDefault;
          }
          StartCoroutine(StopDash());
       }

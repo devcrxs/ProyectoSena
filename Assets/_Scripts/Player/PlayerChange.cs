@@ -13,11 +13,10 @@ public class PlayerChange : MonoBehaviour
 
     private void Update()
     {
-        if ( Input.GetKeyDown(keyChange) && PlayerProperties.instance.IsDynamicBody() && !GameManager.instance.DesactiveInputs && GameManager.instance.CanActivePowerUpCat)
-        {
-            Change();
-            CameraManager.instance.ZoomCamera(7,0.5f);
-        }
+        if (!Input.GetKeyDown(keyChange) || !PlayerProperties.instance.IsDynamicBody() ||
+            GameManager.instance.DesactiveInputs || !GameManager.instance.CanActivePowerUpCat) return;
+        Change();
+        CameraManager.instance.ZoomCamera(7,0.5f);
     }
 
     private void Change()
