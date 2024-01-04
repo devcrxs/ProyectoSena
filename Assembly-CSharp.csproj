@@ -47,21 +47,25 @@
      <Compile Include="Assets\Epic Toon FX\Scripts\ETFXLightFade.cs" />
      <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXButtonScript.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\TestingUnitTests.cs" />
+     <Compile Include="Assets\_Scripts\TriggerChangeZone.cs" />
      <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXMouseOrbit.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineEndless.cs" />
      <Compile Include="Assets\_Scripts\UI\MainMenuManager.cs" />
      <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXTarget.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
+     <Compile Include="Assets\_Scripts\IntroductionText.cs" />
      <Compile Include="Assets\_Scripts\DangerZone.cs" />
      <Compile Include="Assets\_Scripts\AudioManager.cs" />
      <Compile Include="Assets\_Scripts\Dialogue\TextDialogue.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
+     <Compile Include="Assets\_Scripts\DebugMenu.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
-     <Compile Include="Assets\_Scripts\Dialogue\DialogueTrigger.cs" />
+     <Compile Include="Assets\_Scripts\Dialogue\Interaction.cs" />
      <Compile Include="Assets\_Scripts\Dialogue\DialogueManager.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+     <Compile Include="Assets\_Scripts\ActiveTutorial.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\PathBezier2d.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
@@ -71,12 +75,13 @@
      <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSequencer.cs" />
      <Compile Include="Assets\Epic Toon FX\Demo\Scripts\VFX Library\PEButtonScript.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
-     <Compile Include="Assets\_Scripts\UI\ButtonUI.cs" />
+     <Compile Include="Assets\_Scripts\UI\SetLastFocus.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\LogoCinematic.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
      <Compile Include="Assets\LeanTween\Examples\Archived\TestingPunch.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
      <Compile Include="Assets\_Scripts\CheckCollisionPlayer.cs" />
+     <Compile Include="Assets\_Scripts\Dialogue\NPCS\MountainDialogue.cs" />
      <Compile Include="Assets\_Scripts\UpgradeDash.cs" />
      <Compile Include="Assets\_Scripts\Player\PlayerEffects.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralAdvancedTechniques.cs" />
@@ -103,6 +108,7 @@
      <Compile Include="Assets\LeanTween\Examples\Scripts\Following.cs" />
      <Compile Include="Assets\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
      <Compile Include="Assets\LeanTween\Framework\LeanTween.cs" />
+     <Compile Include="Assets\_Scripts\Dialogue\NPCS\SenaDialogue.cs" />
      <Compile Include="Assets\LeanTween\Framework\LTDescr.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
      <Compile Include="Assets\LeanTween\Framework\LeanTweenExt.cs" />
@@ -124,6 +130,7 @@
      <Compile Include="Assets\LeanTween\Examples\Scripts\TestingZLegacy.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\TestingZLegacyExt.cs" />
+     <Compile Include="Assets\_Scripts\PersistenDataManager.cs" />
      <Compile Include="Assets\_Scripts\UI\UIManager.cs" />
      <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXSceneManager.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
@@ -149,9 +156,10 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplinePerformance.cs" />
      <Compile Include="Assets\_Scripts\UI\TransitionManager.cs" />
+     <Compile Include="Assets\_Scripts\DontDestroy.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralBasic.cs" />
-     <Compile Include="Assets\_Scripts\Dialogue\NPCS\TriggerDialogueCat.cs" />
+     <Compile Include="Assets\_Scripts\Dialogue\NPCS\TriggerDialogue.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Epic Toon FX\Prefabs\Environment\Water\Other" />
      <Folder Include="Assets\Epic Toon FX\Sound" />
@@ -367,6 +375,7 @@
      <Folder Include="Assets\Epic Toon FX\Prefabs\Combat\Explosions\SoulExplosion" />
      <Folder Include="Assets\Epic Toon FX\Prefabs\Environment\Lightning" />
      <Folder Include="Assets\Epic Toon FX\Prefabs\Combat\Muzzleflash\LaserMuzzle" />
+     <Folder Include="Assets\Resources" />
      <Folder Include="Assets\Sprites\NPC\Bird" />
      <Folder Include="Assets\Epic Toon FX\Prefabs\Combat\Sword\Whirlwind" />
      <Folder Include="Assets\Materials" />
@@ -510,6 +519,7 @@
      <Folder Include="Assets\Epic Toon FX\Materials\Misc\Portals" />
      <Folder Include="Assets\Epic Toon FX\Upgrade" />
      <Folder Include="Assets\_Scripts\Interactable" />
+     <Folder Include="Assets\Animations\UI" />
      <Folder Include="Assets\Audio" />
      <Folder Include="Assets\Epic Toon FX\Prefabs\Interactive\Powerups\PowerupGlow" />
      <Folder Include="Assets\LeanTween\Examples\Archived" />
@@ -829,11 +839,14 @@
      <Reference Include="Unity.Burst.Cecil">
      <HintPath>C:\Users\Crish\OneDrive\Documentos\Unity Projects\ProyectoSena\Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Burst.Cecil.Rocks">
-     <HintPath>C:\Users\Crish\OneDrive\Documentos\Unity Projects\ProyectoSena\Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+     <Reference Include="DOTween">
+     <HintPath>C:\Users\Crish\OneDrive\Documentos\Unity Projects\ProyectoSena\Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
      <HintPath>C:\Users\Crish\OneDrive\Documentos\Unity Projects\ProyectoSena\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst.Cecil.Rocks">
+     <HintPath>C:\Users\Crish\OneDrive\Documentos\Unity Projects\ProyectoSena\Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
      </Reference>
      <Reference Include="Newtonsoft.Json">
      <HintPath>C:\Users\Crish\OneDrive\Documentos\Unity Projects\ProyectoSena\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
@@ -1392,6 +1405,10 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{3d98d051-64b5-08a7-a2be-6d6156f2f779}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

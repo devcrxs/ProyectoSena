@@ -29,4 +29,4 @@ MonoBehaviour:
   - "\xA1<color=\"green\"><b><size=50>Buena suerte</size></b></color> en tu viaje!
     <sprite name=Heart>"
   iconDialogue: {fileID: 880441248, guid: f9e45bfa1196e7842bbcf9acffa07fd7, type: 3}
-  _audioClipVoice: {fileID: 8300000, guid: c27b26acb5b28e143bc66022ec749da9, type: 3}
+  _audioClipVoice: {fileID: 8300000, guid: f17f4cf7802b1254695534a033f2f030, type: 3}

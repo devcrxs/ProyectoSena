@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,6 @@ public class CameraManager : MonoBehaviour
 {
     public static CameraManager instance;
     [SerializeField] private CinemachineBrain cinemachineBrain;
-    [SerializeField] private CinemachineVirtualCamera cameraStart;
     [SerializeField] private List<CinemachineVirtualCamera> allCameras;
     [SerializeField] private float fallPanAmount = 0.25f;
     [SerializeField] private float fallYPanTime = 0.35f;
@@ -31,7 +31,8 @@ public class CameraManager : MonoBehaviour
         {
             virtualCamera.enabled = false;
         }
-        _currentCamera = cameraStart;
+        _currentCamera =  allCameras.Count > 1? allCameras[PersistenDataManager.instance.GetSaveCamera()]:allCameras[0];
+        _currentCamera.enabled = true;
         _sizeCamera = _currentCamera.m_Lens.OrthographicSize;
         _framingTransposer = _currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
         _normYPanAmount = _framingTransposer.m_YDamping;
@@ -89,6 +90,16 @@ public class CameraManager : MonoBehaviour
         _currentCamera = cameraToChange;
         _currentCamera.enabled = true;
         _framingTransposer = _currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+        int indexCamera = 0;
+        for (int i = 0; i < allCameras.Count; i++)
+        {
+            if (allCameras[i].enabled)
+            {
+                indexCamera = i;
+                break;
+            }
+        }
+        PersistenDataManager.instance.SaveCurrentCamera(indexCamera);
         StartCoroutine(PlayerProperties.instance.StopPlayerAsync(cinemachineBrain.m_DefaultBlend.m_Time));
         
     }

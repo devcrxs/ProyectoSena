@@ -22,6 +22,7 @@ public class PlayerChange : MonoBehaviour
     private void Change()
     {
         PlayerAnimations.instance.CallConvertAnimation();
-        PlayerEffects.instance.PlayRayEffect();
+        PlayerEffects.instance.PlayTransformationEffect();
+        AudioManager.instance.PlayTransformation();
     }
 }

@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class AlwaysViewPlayer : MonoBehaviour
 {
     [SerializeField] private Transform player;

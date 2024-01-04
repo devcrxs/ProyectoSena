@@ -1,11 +1,12 @@
-using System;
 using System.Collections;
 using UnityEngine;
 public class PlayerEffects : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem rayEffect;
+    [SerializeField] private ParticleSystem transformationEffect;
     [SerializeField] private ParticleSystem jumpEffect;
     [SerializeField] private ParticleSystem landEffect;
+    [SerializeField] private ParticleSystem dashEffect;
+    [SerializeField] private ParticleSystem deadEffect;
     [SerializeField] private GameObject trailHuman;
     [SerializeField] private GameObject trailCat;
     private GameObject human;
@@ -23,9 +24,9 @@ public class PlayerEffects : MonoBehaviour
         cat = GameObject.FindWithTag("Cat");
     }
 
-    public void PlayRayEffect()
+    public void PlayTransformationEffect()
     {
-        StartEffect(rayEffect);
+        StartEffect(transformationEffect);
     }
 
     public void PlayJumpEffect()
@@ -36,6 +37,15 @@ public class PlayerEffects : MonoBehaviour
     public void PlayLandEffect()
     {
         StartEffect(landEffect);
+    }
+
+    public void PlayDashEffect()
+    {
+        StartEffect(dashEffect);
+    }
+    public void PlayDeadEffect()
+    {
+        StartEffect(deadEffect);
     }
     private void StartEffect(ParticleSystem particleSystem)
     {

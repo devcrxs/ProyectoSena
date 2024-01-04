@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567c90e4629fd8546a365edc605adc9e, type: 3}
+  m_Name: DialogueIntroduction
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "Bueno, veamos qu\xE9 hay en Internet."
+  - "\xBFConvocatorias para el Sena?"
+  - "\xA1Por fin podr\xE9 estudiar, jeje!"
+  - "\xA1No! No puede ser, mi internet est\xE1 fallando."
+  - "Tendr\xE9 que ir presencialmente."
+  - Debo aprovechar esta oportunidad.
+  iconDialogue: {fileID: 880441248, guid: f9e45bfa1196e7842bbcf9acffa07fd7, type: 3}
+  _audioClipVoice: {fileID: 8300000, guid: f17f4cf7802b1254695534a033f2f030, type: 3}

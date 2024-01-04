@@ -317,6 +317,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: CatIdle_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 326
+        width: 133
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9eba39afc2a31d4aad5bcba2cebb3e5
+      internalID: -2003176075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -332,6 +353,7 @@ TextureImporter:
       CatIdle_8: -298291042
       CatIdle_1: -946912005
       CatIdle_0: -496517279
+      CatIdle_9: -2003176075
       CatIdle_4: -1842179553
       CatIdle_2: -31305513
       CatIdle_5: -1929253975

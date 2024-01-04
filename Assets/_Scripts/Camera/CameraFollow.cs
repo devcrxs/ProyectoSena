@@ -1,9 +1,15 @@
+using System;
 using System.Collections;
 using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private float timeLerp;
     [SerializeField] private Transform playerTransform;
+
+    private void Awake()
+    {
+        transform.position = playerTransform.position;
+    }
 
     private void Update()
     {

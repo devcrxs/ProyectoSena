@@ -19,6 +19,8 @@ public class CameraTrigger : MonoBehaviour
         Vector2 exitDirection = (other.transform.position - _collider.bounds.center).normalized;
         CinemachineVirtualCamera newCurrentCamera = exitDirection.x > 0 ? cameraRight : cameraLeft;
         CameraManager.instance.SwapCamera(newCurrentCamera);
-        GameManager.instance.LastPositionSafe = exitDirection.x > 0 ? safeZoneRight : safeZoneLeft;
+        Vector2 safePosition = exitDirection.x > 0 ? safeZoneRight.position : safeZoneLeft.position;
+        GameManager.instance.LastPositionSafe = safePosition;
+        PersistenDataManager.instance.SavePositionPlayer(safePosition);
     }
 }

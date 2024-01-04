@@ -32,7 +32,7 @@ public class PlayerDash : MonoBehaviour
 
    private void Update()
    {
-      if (Input.GetKeyDown(keyDash) && _canDash && !GameManager.instance.DesactiveInputs)
+      if (Input.GetKeyDown(keyDash) && _canDash && !GameManager.instance.DesactiveInputs && GameManager.instance.CanActiveDash)
       {
          _isDash = true;
          _canDash = false;
@@ -41,6 +41,8 @@ public class PlayerDash : MonoBehaviour
          _directionDash.y = Input.GetAxisRaw("Vertical");
          ShockWaveManager.instance.CallShockWave();
          PlayerEffects.instance.StartTrailGhost();
+         PlayerEffects.instance.PlayDashEffect();
+         AudioManager.instance.PlayAudioDash();
          StartCoroutine(CameraManager.instance.CameraShakeRecursive(2.5f, 0.2f));
          if (_directionDash == Vector2.zero)
          {

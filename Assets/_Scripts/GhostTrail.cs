@@ -3,6 +3,6 @@ public class GhostTrail : MonoBehaviour
 {
     public void DestroyGhost()
     {
-        Destroy(this);
+        Destroy(gameObject);
     }
 }

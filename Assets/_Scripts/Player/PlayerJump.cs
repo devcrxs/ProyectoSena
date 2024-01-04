@@ -16,6 +16,7 @@ public class PlayerJump : MonoBehaviour
     private bool _isJumpCut;
     private float _lastPressedJumpTime;
 	private bool _isFalling;
+	private bool _isTouchGroundFalling;
 	public bool IsJumping => _isJumping;
 	public bool IsFalling => _isFalling;
 	public static PlayerJump instance;
@@ -24,12 +25,14 @@ public class PlayerJump : MonoBehaviour
 	{
 		if (instance == null) instance = this;
 	}
-
+	
 	private void Update()
     {
 	    _lastOnGroundTime -= Time.deltaTime;
 	    _lastPressedJumpTime -= Time.deltaTime;
 	    _isFalling = rb.velocity.y < 0;
+
+	    TouchGroundAfterFalling();
 
 	    if (IsDownJumpInput())
 	    {
@@ -44,7 +47,6 @@ public class PlayerJump : MonoBehaviour
 	    if (_isJumping && rb.velocity.y < 0)
 	    {
 		    _isJumping = false;
-		    
 	    }
 	    if (_lastOnGroundTime > 0 && !_isJumping)
 	    {
@@ -56,7 +58,6 @@ public class PlayerJump : MonoBehaviour
 		    if ( CanJump() && _lastPressedJumpTime > 0.05f)
 		    {
 			    _isJumping = true;
-			
 			    _isJumpCut = false;
 			    Jump();
 		    }
@@ -67,6 +68,21 @@ public class PlayerJump : MonoBehaviour
 		    }
 	    }
 	    GravityJumps();
+	}
+
+	private void TouchGroundAfterFalling()
+	{
+		if (GameManager.instance.DesactiveInputs)
+		{
+			_isTouchGroundFalling = false;
+		}
+		if (_isFalling && !PlayerProperties.instance.IsTouchGround() && !GameManager.instance.DesactiveInputs)
+		{
+			_isTouchGroundFalling = true;
+		}
+		if (!_isTouchGroundFalling || !PlayerProperties.instance.IsTouchGround()) {return;}
+		_isTouchGroundFalling = false;
+		AudioManager.instance.PlayFootsGrass();
 	}
 
 	private void GravityJumps()
@@ -102,7 +118,8 @@ public class PlayerJump : MonoBehaviour
 
 	private bool IsDownJumpInput()
 	{
-		return CanJump() && Input.GetKeyDown(keyJump) && PlayerProperties.instance.IsDynamicBody() && !GameManager.instance.DesactiveInputs;
+		return CanJump() && Input.GetKeyDown(keyJump) && PlayerProperties.instance.IsDynamicBody() 
+		       && !GameManager.instance.DesactiveInputs && GameManager.instance.CanActiveJump;
 	}
 
 	private bool IsUpJumpInput()
@@ -112,6 +129,7 @@ public class PlayerJump : MonoBehaviour
 
 	private void OnJumpInput()
 	{
+		AudioManager.instance.PlayJump();
 		_lastPressedJumpTime = jumpInputBufferTime;
 	}
 
